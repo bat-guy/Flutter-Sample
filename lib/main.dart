@@ -21,17 +21,8 @@ class MyWidget extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: const Center(
-        child: Text(
-          'Body',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Montserrat',
-            letterSpacing: 2,
-            color: Colors.blueAccent 
-          ),)
-        ),
+      body:  Center(
+        child: Image.asset('assets/IMG_0998.JPG')),
         floatingActionButton: FloatingActionButton(
           child: Text('Click'),
           backgroundColor: Colors.red[600],
