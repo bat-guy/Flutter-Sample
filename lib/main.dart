@@ -17,20 +17,24 @@ class MyWidget extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Row(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Text('Text 1'),
-          MaterialButton(
-            onPressed: () {},
-            color: Colors.amber,
-            child: Text('Button'),
+          Container(
+            padding: EdgeInsets.all(20),
+            color: Colors.orangeAccent,
+            child: Text('Text'),
           ),
           Container(
-            color: Colors.lime,
             padding: EdgeInsets.all(30),
-            child: Text('Inside Container'),
+            color: Colors.deepPurpleAccent,
+            child: Text('Text 2'),
+          ),
+          Container(
+            padding: EdgeInsets.all(40),
+            color: Colors.redAccent,
+            child: Text('Text 3'),
           )
         ],
       ),
