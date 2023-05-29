@@ -8,51 +8,72 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.indigo[50],
       appBar: AppBar(
-        title: const Text(
-          'Flutter Sample',
-          style:
-              TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.w900),
-        ),
+        title: Text('ID Card'),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.indigo,
+        elevation: 0,
       ),
-      body: Row(
-        children: <Widget>[
-          Expanded(
-            flex: 3,
-            child: Image.asset('assets/IMG_0998.JPG'),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.orangeAccent,
-              child: Text('Text'),
+      body: const Padding(
+        padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://cdn.vectorstock.com/i/1000x1000/91/07/happy-man-face-vector-6619107.webp'),
+                radius: 40,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.deepPurpleAccent,
-              child: Text('Text 2'),
+            Divider(
+              height: 60,
             ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.redAccent,
-              child: Text('Text 3'),
+            Text(
+              'Name',
+              style: TextStyle(color: Colors.black, letterSpacing: 2),
             ),
-          )
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: Colors.red[600],
-        onPressed: () {},
+            SizedBox(height: 10),
+            Text(
+              'John',
+              style: TextStyle(
+                  color: Colors.green,
+                  letterSpacing: 2,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 30),
+            Text(
+              'Current Level',
+              style: TextStyle(color: Colors.black, letterSpacing: 2),
+            ),
+            SizedBox(height: 10),
+            Text(
+              '10',
+              style: TextStyle(
+                  color: Colors.green,
+                  letterSpacing: 2,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 30),
+            Row(
+              children: [
+                Icon(
+                  Icons.email,
+                  color: Colors.black,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  'abc@abc.com',
+                  style: TextStyle(
+                      color: Colors.black, fontSize: 20, letterSpacing: 1),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
