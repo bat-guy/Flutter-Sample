@@ -17,24 +17,35 @@ class MyWidget extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: Row(
         children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(20),
-            color: Colors.orangeAccent,
-            child: Text('Text'),
+          Expanded(
+            flex: 3,
+            child: Image.asset('assets/IMG_0998.JPG'),
           ),
-          Container(
-            padding: EdgeInsets.all(30),
-            color: Colors.deepPurpleAccent,
-            child: Text('Text 2'),
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.orangeAccent,
+              child: Text('Text'),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(40),
-            color: Colors.redAccent,
-            child: Text('Text 3'),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.deepPurpleAccent,
+              child: Text('Text 2'),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.redAccent,
+              child: Text('Text 3'),
+            ),
           )
         ],
       ),
