@@ -17,16 +17,23 @@ class MyWidget extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-          margin: EdgeInsets.all(20),
-          color: Colors.grey[400],
-          child: Center(
-            child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.alternate_email_outlined),
-                color: Colors.amber),
-          )),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text('Text 1'),
+          MaterialButton(
+            onPressed: () {},
+            color: Colors.amber,
+            child: Text('Button'),
+          ),
+          Container(
+            color: Colors.lime,
+            padding: EdgeInsets.all(30),
+            child: Text('Inside Container'),
+          )
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         backgroundColor: Colors.red[600],
