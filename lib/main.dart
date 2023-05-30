@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: MyWidget()));
 
-class MyWidget extends StatelessWidget {
+class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  int level = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +22,15 @@ class MyWidget extends StatelessWidget {
         backgroundColor: Colors.indigo,
         elevation: 0,
       ),
-      body: const Padding(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            level += 1;
+          });
+        },
+        child: Icon(Icons.add),
+      ),
+      body: Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +65,7 @@ class MyWidget extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              '10',
+              '$level',
               style: TextStyle(
                   color: Colors.green,
                   letterSpacing: 2,
@@ -76,5 +91,19 @@ class MyWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class MyWidget2 extends StatefulWidget {
+  const MyWidget2({super.key});
+
+  @override
+  State<MyWidget2> createState() => _MyWidget2State();
+}
+
+class _MyWidget2State extends State<MyWidget2> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
