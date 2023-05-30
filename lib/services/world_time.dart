@@ -7,6 +7,7 @@ class WorldTime {
   String time;
   String flag;
   String url;
+  bool isDayTime = false;
 
   WorldTime({required this.location, required this.time, required this.flag, required this.url});
 
@@ -17,14 +18,21 @@ class WorldTime {
       // print(jsonDecode(response.body));
 
       String dateTime = data['datetime'];
-      String offset = data['utc_offset'].substring(1, 3);
+      String offsetHour = data['utc_offset'].substring(1, 3);
+      String offsetMinute = data['utc_offset'].substring(4, 6);
+
+      print('Offset - $offsetHour - $offsetMinute');
 
       DateTime now = DateTime.parse(dateTime);
-      now = offset == '-' ? now.subtract(Duration(hours: int.parse(offset))) : now.add(Duration(hours: int.parse(offset)));
+      now = offsetHour == '-'
+          ? now.subtract(Duration(hours: int.parse(offsetHour), minutes: int.parse(offsetMinute)))
+          : now.add(Duration(hours: int.parse(offsetHour), minutes: int.parse(offsetMinute)));
 
+      isDayTime = now.hour > 6 && now.hour < 20;
       time = DateFormat.jm().format(now);
     } catch (e) {
       time = 'Could not get the time data';
+      print(e);
     }
   }
 }
