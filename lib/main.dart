@@ -4,7 +4,7 @@ import 'package:flutter_sample/pages/home.dart';
 import 'package:flutter_sample/pages/splash.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/home',
+      // initialRoute: '/home',
       routes: {
         '/': (context) => Splash(),
         '/home': (context) => Home(),
